@@ -33,3 +33,7 @@
     rebase = false
 [init]
     defaultBranch = main
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
