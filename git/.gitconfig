@@ -1,0 +1,13 @@
+[user]
+	name = Yurii Skrynnykov
+	email = truef1s7@gmail.com
+	signingkey = E60FDB47
+[core]
+	editor = vim
+[commit]
+	gpgsign = on
+[alias]
+	st = status
+    co = checkout
+[pull]
+	rebase = false
