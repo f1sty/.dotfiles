@@ -112,7 +112,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWUPSTREAM="auto"
 
-precmd () { __git_ps1 "" "%~ $ " "%s:" }
+precmd () { __git_ps1 "" "%~ $ " "(%s)" }
 
 sd () {
     sdcv -n --utf8-output --color "$@" 2>&1 | \
