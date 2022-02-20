@@ -24,9 +24,9 @@ Options:
 local o = {
     show_name = true,
     color = true,
-    duration_multiplier = 10,
-    max_duration = 10,
-    fetch_aot = 3,
+    duration_multiplier = 7,
+    max_duration = 5,
+    fetch_aot = 1,
     ignore_sub = true,
 }
 
