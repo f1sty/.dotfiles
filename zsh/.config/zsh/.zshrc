@@ -112,6 +112,8 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWUPSTREAM="auto"
 
+fortune
+
 precmd () { __git_ps1 "" "%~ $ " "(%s)" }
 
 sd () {
