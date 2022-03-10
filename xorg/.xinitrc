@@ -34,6 +34,7 @@ wmname LG3D
 # picom -b --unredir-if-possible --backend xr_glx_hybrid --vsync --use-damage --glx-no-stencil
 # picom -b --experimental-backends
 picom &
+clipmenud &
 exec startdwm
 # exec spectrwm
 # exec awesome
