@@ -184,6 +184,7 @@ nmap <leader>q :bp <bar> bd #<cr>
 " nmap <leader>q :tabclose<cr>
 nmap <leader>r :Rg 
 nmap <leader>f :Files<cr>
+nmap <leader>b :Buffers<cr>
 nmap <leader>u :UnicodeSearch! 
 nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>

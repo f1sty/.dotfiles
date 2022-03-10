@@ -21,7 +21,12 @@ export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/rg/config"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export FZF_TMUX=1
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --color=never"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {}'"
+export FZF_ALT_C_COMMAND="fd --type d . --hidden --color=never"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
