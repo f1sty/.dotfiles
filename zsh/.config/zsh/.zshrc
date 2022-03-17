@@ -45,6 +45,11 @@ autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 _comp_options+=(globdots) # Include hidden files.
 
+zshcache_time="$(date +%s%N)"
+
+autoload -Uz add-zsh-hook
+
+add-zsh-hook -Uz precmd rehash_precmd
 # Define completers
 zstyle ':completion:*' completer _extensions _complete _approximate
 # Use cache for commands using cache
@@ -129,4 +134,14 @@ shot () {
 
 yta() {
     mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
+}
+
+rehash_precmd() {
+    if [[ -a /var/cache/zsh/pacman ]]; then
+        local paccache_time="$(date -r /var/cache/zsh/pacman +%s%N)"
+        if (( zshcache_time < paccache_time )); then
+            rehash
+            zshcache_time="$paccache_time"
+        fi
+    fi
 }
