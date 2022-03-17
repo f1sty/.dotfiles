@@ -1,8 +1,9 @@
 #!/bin/zsh
 
-autoload -U colors && colors
+autoload -U colors; colors
 # PS1="%~ $ "
-# autoload -Uz promptinit && promptinit
+# autoload -Uz promptinit; promptinit
+# prompt spaceship
 
 stty stop undef		# Disable ctrl-s to freeze terminal.
 
@@ -48,8 +49,8 @@ _comp_options+=(globdots) # Include hidden files.
 zshcache_time="$(date +%s%N)"
 
 autoload -Uz add-zsh-hook
-
 add-zsh-hook -Uz precmd rehash_precmd
+
 # Define completers
 zstyle ':completion:*' completer _extensions _complete _approximate
 # Use cache for commands using cache
@@ -98,7 +99,7 @@ source /usr/share/fzf/completion.zsh
 
 source $XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 # source $XDG_CONFIG_HOME/zsh/plugins/zsh-git-prompt/zshrc.sh
-source $HOME/scripts/git-prompt.sh
+# source $HOME/scripts/git-prompt.sh
 # source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /opt/asdf-vm/asdf.sh
 # setopt PROMPT_SUBST
@@ -111,15 +112,17 @@ export GPG_TTY=$(tty)
 # PROMPT='%B%m%~%b$(git_super_status) %# '
 
 # git-prompt.sh settings
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWCOLORHINTS=true
-GIT_PS1_SHOWUPSTREAM="auto"
+# GIT_PS1_SHOWDIRTYSTATE=true
+# GIT_PS1_SHOWUNTRACKEDFILES=true
+# GIT_PS1_SHOWSTASHSTATE=true
+# GIT_PS1_SHOWCOLORHINTS=true
+# GIT_PS1_SHOWUPSTREAM="auto"
 
 fortune
+# https://github.com/starship/starship - starship prompt
+eval "$(starship init zsh)"
 
-precmd () { __git_ps1 "" "%~ $ " "(%s)" }
+# precmd () { __git_ps1 "" "%~ $ " "(%s)" }
 
 sd () {
     sdcv -n --utf8-output --color "$@" 2>&1 | \
