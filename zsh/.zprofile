@@ -1,9 +1,10 @@
 #!/bin/zsh
 
 unsetopt PROMPT_SP
+typeset -U PATH
 
 export EDITOR="vim"
-export VISUAL="gvim"
+export VISUAL="vim"
 export TERMINAL="st"
 export BROWSER="firefox"
 
