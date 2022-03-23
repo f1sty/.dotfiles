@@ -2,12 +2,12 @@
 add_newline = false
 
 # Replaces the default "❯" symbol in the prompt with "➜"
-[character]                             # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"      # The "success_symbol" segment is being set to "➜" with the color "bold green"
+# [character]                             # The name of the module we are configuring is "character"
+# success_symbol = "[➜](bold green)"      # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 [cmd_duration]
 disabled = true
 
 # Disable the package module, hiding it from the prompt completely
-# [package]
-# disabled = true
+[package]
+disabled = true

@@ -52,7 +52,7 @@ export PATH="$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH"
 export LIBVA_DRIVER_NAME="vdpau"
 export VDPAU_DRIVER="nvidia"
 
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 source "$HOME/.secrets"
 if [ -f '/home/f1st/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/f1st/bin/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/home/f1st/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/f1st/bin/google-cloud-sdk/completion.zsh.inc'; fi

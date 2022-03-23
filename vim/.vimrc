@@ -16,7 +16,7 @@ call plug#begin()
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
     " Plug 'JamshedVesuna/vim-markdown-preview'
-    Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+    " Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
     Plug 'SirVer/ultisnips'
     Plug 'altercation/vim-colors-solarized'
     Plug 'ap/vim-css-color'
