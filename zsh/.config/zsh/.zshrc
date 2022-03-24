@@ -32,12 +32,12 @@ setopt menu_complete        # automatically highlight first element of completio
 setopt auto_list            # automatically list choices on ambiguous completion.
 setopt complete_in_word     # complete from both ends of a word.
 
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases"
+if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases" ]]; then source "${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases"; fi
 
 bindkey -v
 export KEYTIMEOUT=1
 
-zstyle :compinstall filename '$XDG_CONFIG_HOME/zsh/.zshrc'
+zstyle :compinstall filename "${XDG_CONFIG_HOME:-$HOME/.config}}/zsh/.zshrc"
 
 zmodload zsh/complist
 zmodload zsh/zprof
@@ -55,7 +55,7 @@ add-zsh-hook -Uz precmd rehash_precmd
 zstyle ':completion:*' completer _extensions _complete _approximate
 # Use cache for commands using cache
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/.zcompcache"
 # Complete the alias when _expand_alias is used as a function
 zstyle ':completion:*' complete true
 zle -C alias-expension complete-word _generic
@@ -98,10 +98,7 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
 source $XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-# source $XDG_CONFIG_HOME/zsh/plugins/zsh-git-prompt/zshrc.sh
 # source $HOME/scripts/git-prompt.sh
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /opt/asdf-vm/asdf.sh
 # setopt PROMPT_SUBST
 # PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
 # PROMPT='[%~ $(git_super_status)] \$ '
@@ -118,7 +115,6 @@ export GPG_TTY=$(tty)
 # GIT_PS1_SHOWCOLORHINTS=true
 # GIT_PS1_SHOWUPSTREAM="auto"
 
-fortune
 # https://github.com/starship/starship - starship prompt
 eval "$(starship init zsh)"
 
