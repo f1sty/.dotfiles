@@ -14,13 +14,13 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export LESSHISTFILE="-"
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
-export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+export WINEPREFIX="${XDG_DATA_HOME}/wineprefixes/default"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android"
-export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/rg/config"
-export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
-export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
+export ANDROID_SDK_HOME="${XDG_CONFIG_HOME}/android"
+export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME}/rg/config"
+export HISTFILE="${XDG_DATA_HOME}/history"
+export WEECHAT_HOME="${XDG_CONFIG_HOME}/weechat"
 export FZF_TMUX=1
 export FZF_DEFAULT_COMMAND="fd --type f --follow --hidden --color=never"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
@@ -40,9 +40,9 @@ export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
-export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
+export ANDROID_PREFS_ROOT="${XDG_CONFIG_HOME}/android"
 export ADB_KEYS_PATH="$ANDROID_PREFS_ROOT"
-export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android/emulator 
+export ANDROID_EMULATOR_HOME="${XDG_DATA_HOME}/android/emulator"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export _JAVA_AWT_WM_NONREPARENTING=1
