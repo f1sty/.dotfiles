@@ -24,6 +24,7 @@ feh --bg-scale /home/f1sty/media/images/wallpapers/kitty.jpg
 xsetroot -cursor_name left_ptr
 slstatus &
 wmname LG3D
+keynav
 # urxvtd -q -o -f
 # export GTK_IM_MODULE=uim
 # export QT_IM_MODULE=uim
