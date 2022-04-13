@@ -1,6 +1,9 @@
 set nocompatible
 
 call plug#begin()
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'frazrepo/vim-rainbow'
+    Plug 'mrk21/yaml-vim'
     Plug 'elixir-editors/vim-elixir'
     Plug 'mhinz/vim-mix-format'
     Plug 'slashmili/alchemist.vim'
@@ -68,6 +71,7 @@ set wildmode=list:full
 set wildoptions=pum,fuzzy
 set mouse=a
 set signcolumn=number
+set shortmess=aoOtTI
 setlocal spelllang=en_us
 
 colorscheme gruvbox
@@ -83,6 +87,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 let g:UltiSnipsListSnippets = "<leader>s"
+let g:rainbow_active = 1
 
 nmap <leader>l :bn<cr>
 nmap <leader>h :bp<cr>

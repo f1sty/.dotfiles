@@ -36,6 +36,7 @@ if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases" ]]; then source "${XDG
 
 bindkey -v
 export KEYTIMEOUT=1
+export GOPATH="$HOME/coding/go"
 
 zstyle :compinstall filename "${XDG_CONFIG_HOME:-$HOME/.config}}/zsh/.zshrc"
 
