@@ -2,6 +2,7 @@ set nocompatible
 
 call plug#begin()
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'frazrepo/vim-rainbow'
     Plug 'mrk21/yaml-vim'
     Plug 'elixir-editors/vim-elixir'
@@ -118,6 +119,10 @@ inoremap <right> <nop>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
