@@ -76,7 +76,8 @@ setlocal spelllang=en_us
 
 colorscheme gruvbox
 
-let mapleader=","
+let mapleader=" "
+let maplocalleader=" "
 let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=1
@@ -89,8 +90,8 @@ let g:airline_powerline_fonts = 1
 let g:UltiSnipsListSnippets = "<leader>s"
 let g:rainbow_active = 1
 
-nmap <leader>l :bn<cr>
-nmap <leader>h :bp<cr>
+nmap <leader>j :bn<cr>
+nmap <leader>k :bp<cr>
 nmap <leader>q :bp <bar> bd #<cr>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -103,8 +104,6 @@ nmap <leader>u :UnicodeSearch!
 nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>
 inoremap <M-space> <Esc>
-nnoremap <space> za
-vnoremap <space> za
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
