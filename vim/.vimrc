@@ -16,8 +16,10 @@ call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 set undofile
@@ -101,6 +103,7 @@ nmap <leader>r :Rg
 nmap <leader>f :Files<cr>
 nmap <leader>b :Buffers<cr>
 nmap <leader>u :UnicodeSearch! 
+nmap <leader>p :MarkdownPreview<cr>
 nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>
 inoremap <M-space> <c-x><c-o>
