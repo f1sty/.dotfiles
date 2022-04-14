@@ -103,7 +103,7 @@ nmap <leader>b :Buffers<cr>
 nmap <leader>u :UnicodeSearch! 
 nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>
-inoremap <M-space> <Esc>
+inoremap <M-space> <c-x><c-o>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
