@@ -2,7 +2,7 @@ set nocompatible
 
 call plug#begin()
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --all' }
     Plug 'frazrepo/vim-rainbow'
     Plug 'mrk21/yaml-vim'
     Plug 'elixir-editors/vim-elixir'
@@ -91,27 +91,36 @@ let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
-let g:UltiSnipsListSnippets = "<leader>s"
+let g:UltiSnipsExpandTrigger="<leader>s"
+let g:UltiSnipsListSnippets = "<leader>ls"
 let g:rainbow_active = 1
+let g:ycm_language_server =
+    \ [
+    \   {
+    \     'name': 'elixir',
+    \     'cmdline': [ '/usr/bin/elixir-ls' ],
+    \     'filetypes': [ 'elixir' ]
+    \   },
+    \ ]
 
 nmap <leader>j :bn<cr>
 nmap <leader>k :bp<cr>
 nmap <leader>q :bp <bar> bd #<cr>
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-inoremap <c-x><c-k> <c-x><c-k>
-nmap <leader>r :Rg 
-nmap <leader>f :Files<cr>
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+" inoremap <c-x><c-k> <c-x><c-k>
+nmap <c-p> :Files<cr>
+nmap <leader>r :Rg<cr>
 nmap <leader>b :Buffers<cr>
 nmap <leader>u :UnicodeSearch! 
 nmap <leader>p :MarkdownPreview<cr>
 nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>
 inoremap <M-space> <c-x><c-o>
-inoremap <silent><expr> <c-@> coc#refresh()
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <c-@> coc#refresh()
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
@@ -123,10 +132,10 @@ inoremap <right> <nop>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
 
 autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
