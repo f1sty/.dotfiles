@@ -18,6 +18,7 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-fugitive'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -108,6 +109,9 @@ nmap <leader>p :MarkdownPreview<cr>
 nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>
 inoremap <M-space> <c-x><c-o>
+inoremap <silent><expr> <c-@> coc#refresh()
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>

@@ -43,7 +43,7 @@ zstyle :compinstall filename "${XDG_CONFIG_HOME:-$HOME/.config}}/zsh/.zshrc"
 zmodload zsh/complist
 zmodload zsh/zprof
 
-autoload -U compinit && compinit
+autoload -U compinit && compinit -i
 zstyle ':completion:*' menu select
 _comp_options+=(globdots) # Include hidden files.
 
