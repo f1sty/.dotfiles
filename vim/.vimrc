@@ -21,9 +21,13 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
+set laststatus=2
+set smarttab
+set autoindent
 set undofile
 set undodir=~/.vim/undo
 set undolevels=10000
@@ -72,7 +76,7 @@ set ttyfast
 set updatetime=300
 set wildmenu
 set wildmode=list:full
-set wildoptions=pum,fuzzy
+" set wildoptions=pum,fuzzy
 set mouse=a
 set signcolumn=number
 set shortmess=aoOtTI
@@ -88,8 +92,8 @@ let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:mix_format_on_save=1
 let g:airline_theme = 'gruvbox'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 let g:UltiSnipsExpandTrigger="<leader>s"
 let g:UltiSnipsListSnippets = "<leader>ls"
