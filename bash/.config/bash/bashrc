@@ -41,7 +41,7 @@ export BASH_IT="/home/f1sty/.bash_it"
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-export BASH_IT_THEME='barbuk'
+export BASH_IT_THEME='easy'
 
 # Some themes can show whether `sudo` has a current token or not.
 # Set `$THEME_CHECK_SUDO` to `true` to check every prompt:
@@ -110,7 +110,7 @@ export SCM_CHECK=true
 # export BASH_IT_RELOAD_LEGACY=1
 
 # Load Bash It
-source "$BASH_IT"/bash_it.sh
+[[ $BASH_IT/bash_it.sh ]] && source $BASH_IT/bash_it.sh
 
 [[ ${BLE_VERSION-} ]] && ble-attach
 # def() {
