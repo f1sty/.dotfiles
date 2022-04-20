@@ -60,7 +60,7 @@ set nowrap
 set number
 set ruler
 set scrolloff=9
-set shell=/bin/zsh
+set shell=/bin/bash
 set shiftwidth=4 tabstop=4 expandtab
 set softtabstop=4
 set showcmd
