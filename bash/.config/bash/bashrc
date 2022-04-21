@@ -113,8 +113,3 @@ export SCM_CHECK=true
 [[ $BASH_IT/bash_it.sh ]] && source $BASH_IT/bash_it.sh
 
 # [[ ${BLE_VERSION-} ]] && ble-attach
-# def() {
-#     sdcv -n --utf8-output --color "$@" 2>&1 | \
-#         fold --width=$(tput cols) | \
-#         less -FRX
-#     }
