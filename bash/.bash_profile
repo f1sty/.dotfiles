@@ -46,7 +46,7 @@ export PATH="$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH"
 export LIBVA_DRIVER_NAME="vdpau"
 export VDPAU_DRIVER="nvidia"
 
-if [[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]]; then source "$XDG_CONFIG_HOME/bash/bashrc"; fi
-if [[ -f "$XDG_CONFIG_HOME/bash/aliases" ]]; then source "$XDG_CONFIG_HOME/bash/aliases"; fi
-if [[ -f "$HOME/.secrets" ]]; then source "$HOME/.secrets"; fi
-if [[ -f "$HOME/.cargo/env" ]]; then source "$HOME/.cargo/env"; fi
+[[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && source "$XDG_CONFIG_HOME/bash/bashrc"
+[[ -f "$XDG_CONFIG_HOME/bash/aliases" ]] && source "$XDG_CONFIG_HOME/bash/aliases"
+[[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"

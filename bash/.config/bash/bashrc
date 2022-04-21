@@ -1,4 +1,4 @@
-[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
+# [[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
 
 set -o vi
 
@@ -26,8 +26,8 @@ shopt -s globstar
 complete -cf sudo
 complete -cf man
 
-if [[ -f /usr/share/fzf/key-bindings.bash ]]; then source /usr/share/fzf/key-bindings.bash; fi
-if [[ -f /usr/share/fzf/completion.bash ]]; then source /usr/share/fzf/completion.bash; fi
+[[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
+[[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
 
 # If not running interactively, don't do anything
 case $- in
@@ -62,7 +62,7 @@ export GIT_HOSTING='git@git.domain.com'
 unset MAILCHECK
 
 # Change this to your console based IRC client of choice.
-export IRC_CLIENT='irssi'
+export IRC_CLIENT='weechat'
 
 # Set this to the command you use for todo.txt-cli
 export TODO="t"
@@ -112,7 +112,7 @@ export SCM_CHECK=true
 # Load Bash It
 [[ $BASH_IT/bash_it.sh ]] && source $BASH_IT/bash_it.sh
 
-[[ ${BLE_VERSION-} ]] && ble-attach
+# [[ ${BLE_VERSION-} ]] && ble-attach
 # def() {
 #     sdcv -n --utf8-output --color "$@" 2>&1 | \
 #         fold --width=$(tput cols) | \
