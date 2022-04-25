@@ -17,8 +17,9 @@ xset s off
 xset r rate 300 35
 # mouse acceleration
 xset m 3/2 6
+~/.fehbg &
 # feh --bg-scale /home/f1st/media/images/wallpapers/lantern2.jpg
-feh --bg-scale /home/f1sty/media/images/wallpapers/kitty.jpg
+# feh --bg-scale /home/f1sty/media/images/wallpapers/kitty.jpg
 # nitrogen --save --random --force-setter=xinerama --head=0 --set-scaled media/images/wallpapers &
 # nitrogen --save --random --force-setter=xinerama --head=1 --set-scaled media/images/wallpapers &
 xsetroot -cursor_name left_ptr
