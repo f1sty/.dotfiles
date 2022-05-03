@@ -145,6 +145,8 @@ autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
 
 iabbrev ssig --<cr>Yurii Skrynnykov<cr><cr>email: truef1s7@gmail.com<cr>github: https://github.com/f1sty
+iabbrev gm truef1s7@gmail.com
+iabbrev <expr> dts strftime("%Y-%m-%d %T %z")
+iabbrev yfm ---<cr>layout: post<cr>title:  ""<cr>date: <cr>categories: <cr>---
 cabbrev ug r! uuidgen
-
 hi Normal guibg=NONE ctermbg=NONE

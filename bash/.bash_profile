@@ -42,7 +42,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ERL_AFLAGS="-kernel shell_history enabled"
 export TERM=screen-256color
-export PATH="$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH"
+export PATH=${XDG_DATA_HOME:-$HOME/.local/share}/erlang/bin:${XDG_DATA_HOME:-$HOME/.local/share}/elixir/bin:/home/f1sty/.local/share/gem/ruby/3.0.0/bin:$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
 export LIBVA_DRIVER_NAME="vdpau"
 export VDPAU_DRIVER="nvidia"
 
