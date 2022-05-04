@@ -95,8 +95,8 @@ let g:airline_theme = 'gruvbox'
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
-let g:UltiSnipsExpandTrigger="<leader>s"
-let g:UltiSnipsListSnippets = "<leader>ls"
+let g:UltiSnipsExpandTrigger="<leader>\\"
+let g:UltiSnipsListSnippets = "<leader>\\\\"
 let g:rainbow_active = 1
 let g:ycm_language_server =
     \ [
@@ -134,7 +134,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
 " nmap <silent> gd <Plug>(coc-definition)
 " nmap <silent> gy <Plug>(coc-type-definition)
