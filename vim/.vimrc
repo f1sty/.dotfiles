@@ -22,6 +22,9 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+    Plug 'xolox/vim-misc'
+    Plug 'xolox/vim-session'
+    " Plug 'jlanzarotta/bufexplorer'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
@@ -86,14 +89,18 @@ colorscheme gruvbox
 
 let mapleader=" "
 let maplocalleader=" "
+let g:session_directory="~/.vim/sessions"
+let g:session_autoload='no'
+let g:session_autosave='no'
+let g:session_command_aliases=1
 let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:mix_format_on_save=1
 let g:airline_theme = 'gruvbox'
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 let g:UltiSnipsExpandTrigger="<leader>\\"
 let g:UltiSnipsListSnippets = "<leader>\\\\"
@@ -134,6 +141,11 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
+nnoremap <leader>so :OpenSession 
+nnoremap <leader>ss :SaveSession  
+nnoremap <leader>sd :DeleteSession<cr>
+nnoremap <leader>sc :CloseSession<cr>
+
 nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
 " nmap <silent> gd <Plug>(coc-definition)
 " nmap <silent> gy <Plug>(coc-type-definition)

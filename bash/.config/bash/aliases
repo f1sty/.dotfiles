@@ -19,3 +19,4 @@ alias webcam='mpv --no-cache --no-osc --profile=low-latency --untimed --title=we
 alias ua='udevadm info --attribute-walk'
 alias flags='pkg-config --cflags --libs'
 alias arduino-cli='arduino-cli --config-file $XDG_CONFIG_HOME/arduino15/arduino-cli.yaml'
+alias aws-vault='aws-vault --backend=pass'
