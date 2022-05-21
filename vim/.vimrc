@@ -2,7 +2,8 @@ set nocompatible
 
 call plug#begin()
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-    Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --all' }
+    " Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --all' }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'frazrepo/vim-rainbow'
     Plug 'mrk21/yaml-vim'
     Plug 'elixir-editors/vim-elixir'
@@ -19,12 +20,12 @@ call plug#begin()
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-obsession'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-    Plug 'xolox/vim-misc'
-    Plug 'xolox/vim-session'
-    " Plug 'jlanzarotta/bufexplorer'
+    " Plug 'xolox/vim-misc'
+    " Plug 'xolox/vim-session'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
@@ -102,20 +103,23 @@ let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
-let g:UltiSnipsExpandTrigger="<leader>\\"
-let g:UltiSnipsListSnippets = "<leader>\\\\"
+" let g:UltiSnipsExpandTrigger="<leader>\\"
+let g:UltiSnipsListSnippets = "<leader>s"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:rainbow_active = 1
-let g:ycm_language_server =
-    \ [
-    \   {
-    \     'name': 'elixir',
-    \     'cmdline': [ '/usr/bin/elixir-ls' ],
-    \     'filetypes': [ 'elixir' ]
-    \   },
-    \ ]
+" let g:ycm_language_server =
+"     \ [
+"     \   {
+"     \     'name': 'elixir',
+"     \     'cmdline': [ '/usr/bin/elixir-ls' ],
+"     \     'filetypes': [ 'elixir' ]
+"     \   },
+"     \ ]
 
-nmap <leader>j :bn<cr>
-nmap <leader>k :bp<cr>
+nmap <leader>k :bn<cr>
+nmap <leader>j :bp<cr>
 nmap <leader>q :bp <bar> bd #<cr>
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -141,10 +145,10 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
-nnoremap <leader>so :OpenSession 
-nnoremap <leader>ss :SaveSession  
-nnoremap <leader>sd :DeleteSession<cr>
-nnoremap <leader>sc :CloseSession<cr>
+nnoremap <leader>so :source ~/.vim/sessions/
+nnoremap <leader>ss :Obsession ~/.vim/sessions/
+nnoremap <leader>sd :Obsession!<cr>
+nnoremap <leader>sp :Obsession<cr>
 
 nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
 " nmap <silent> gd <Plug>(coc-definition)
