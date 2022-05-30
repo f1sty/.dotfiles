@@ -31,7 +31,7 @@ GIT_PS1_SHOWCOLORHINTS="true"
 
 [[ -f $HOME/scripts/git-prompt.sh ]] && source $HOME/scripts/git-prompt.sh
 
-PROMPT_COMMAND='__git_ps1 "\w" "➤ "'
+PROMPT_COMMAND='__git_ps1 "\w " "❯ "'
 # PS1='[\u@\h \W$(__git_ps1 " (%s)")]➧'
 
 complete -cf sudo

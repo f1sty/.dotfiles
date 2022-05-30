@@ -88,8 +88,8 @@ setlocal spelllang=en_us
 
 colorscheme gruvbox
 
-let mapleader=" "
-let maplocalleader=" "
+let mapleader="\\"
+let maplocalleader="\\"
 let g:session_directory="~/.vim/sessions"
 let g:session_autoload='no'
 let g:session_autosave='no'
