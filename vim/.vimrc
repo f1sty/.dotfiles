@@ -133,9 +133,9 @@ nmap <leader>p :MarkdownPreview<cr>
 nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>
 inoremap <M-space> <c-x><c-o>
-" inoremap <silent><expr> <c-@> coc#refresh()
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <c-@> coc#refresh()
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
