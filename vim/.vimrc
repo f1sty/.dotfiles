@@ -46,7 +46,7 @@ set cursorline                          " track position
 set encoding=utf-8                      " UTF-8 encoding for all new files
 set fileformat=unix
 set foldenable
-set foldlevelstart=3
+set foldlevelstart=10
 set foldmethod=syntax
 set foldnestmax=5
 set formatoptions+=j
