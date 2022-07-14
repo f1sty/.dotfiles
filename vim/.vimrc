@@ -85,6 +85,7 @@ set mouse=a
 set signcolumn=number
 set shortmess=aoOtTI
 setlocal spelllang=en_us
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 colorscheme gruvbox
 
@@ -134,8 +135,20 @@ nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>
 inoremap <M-space> <c-x><c-o>
 inoremap <silent><expr> <c-@> coc#refresh()
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
@@ -151,13 +164,27 @@ nnoremap <leader>sd :Obsession!<cr>
 nnoremap <leader>sp :Obsession<cr>
 
 nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 
 autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 iabbrev ssig --<cr>Yurii Skrynnykov<cr><cr>email: truef1s7@gmail.com<cr>github: https://github.com/f1sty
 iabbrev gm truef1s7@gmail.com
